@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота 5 - Enhanced with Logging</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h3 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        form {
+            margin: 15px 0;
+        }
+        input[type="text"], input[type="date"] {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .logs-section {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .logs-section h3 {
+            border-bottom-color: #2196F3;
+        }
+        .logs-button {
+            background-color: #2196F3;
+        }
+        .logs-button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Worker Management System with Logging</h1>
+    
+    <div class="container">
+        <h3>The number of subordinates of each chief</h3>
+        <form action="subordinates.php" method="post">
+            <input type="text" name="chief_name" placeholder="Name chief" required>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h3>Total time spent on the selected project</h3>
+        <form action="project_time.php" method="post">
+            <input type="text" name="project_name" placeholder="Project name" required>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h3>Information on completed tasks for the specified project on the selected date</h3>
+        <form action="tasks.php" method="post">
+            <input type="text" name="project_name" placeholder="Name project" required>
+            <input type="date" name="task_date" required>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+    
+    <div class="container logs-section">
+        <h3>View Request Logs</h3>
+        <p>Check all logged requests with timestamps and parameters</p>
+        <form action="view_logs.php" method="get">
+            <button type="submit" class="logs-button">View Logs</button>
+        </form>
+    </div>
+</body>
+</html>
